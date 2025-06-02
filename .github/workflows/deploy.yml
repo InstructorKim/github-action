@@ -26,8 +26,15 @@ jobs:
         run: | 
           echo "Good"
           echo "Morning"
-          
+
+      # 커밋 ID, 레포지터리 이름
       - name: Github Action 자체에 저장되어 있는 변수 사용해보기
         run: |
-          echo $GITHUB_SHA
+          echo $GITHUB_SHA 
           echo $GITHUB_REPOSITORY
+      
+      - name: 노출되어서는 안되는 값
+        run: |
+          echo ${{secrets.MY_NAME}}
+          echo ${{secrets.MY_HOBBY}}
+          
